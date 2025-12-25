@@ -28,7 +28,7 @@ function fzf-rg() {
     local query=$(get_query "${LBUFFER}")
     local lbuf=$(get_lbuf ${LBUFFER})
     local rbuf=$(get_rbuf ${RBUFFER})
-    local out=$(rg -uuu --ignore-file ~/.ignore --color always -n ^ | \
+    local out=$(rg -uuu --ignore-file ~/.ignore --color always -n ^ 2>/dev/null | \
         fzf --ansi --multi --reverse \
         --query "$query" \
         --delimiter ':' \
